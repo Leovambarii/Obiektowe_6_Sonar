@@ -16,8 +16,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartTotalAmount, setCartTotalAmount] = useState<number>(0);
 
   useEffect(() => {
-    const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-    setCartTotalAmount(totalAmount);
+    const total = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    setCartTotalAmount(total);
   }, [cart]);
 
   const addProductToCart = useCallback((product: Product) => {

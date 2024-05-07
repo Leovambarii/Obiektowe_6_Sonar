@@ -7,10 +7,10 @@ const Products: React.FC = () => {
   const { cart, addProductToCart, removeProductFromCart } = useCart();
 
   useEffect(() => {
-    fetchProducts();
+    getProducts();
   }, []);
 
-  const fetchProducts = async () => {
+  const getProducts = async () => {
     try {
       const response = await fetch('http://localhost:8080/products');
       const data = await response.json();
